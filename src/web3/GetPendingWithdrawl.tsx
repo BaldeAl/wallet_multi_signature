@@ -2,6 +2,8 @@
 import { useSharedAccountPendingWithdrawals } from "./wagmi.generated";
 import { Hex } from "viem";
 import ApproveWithdrawalComponent from "./ApprouveWithdrawl";
+import { toast } from "react-toastify";
+import { useEffect } from "react";
 
 type PendingWithdrawalComponentProps = {
   userAddress: Hex;
@@ -18,8 +20,15 @@ function PendingWithdrawalComponent(
     args: [userAddress],
   });
 
-  // Vérifier si le montant est supérieur à 0
+  //Pour  Vérifier si le montant est supérieur à 0
   const hasPendingWithdrawal = pendingWithdrawal && pendingWithdrawal[0] > 0;
+
+  // Pour informer l'utilisateur qu'il a une demande de retrait en attente
+  useEffect(() => {
+    if (hasPendingWithdrawal) {
+      toast.info("Vous avez une demande de retrait en attente.");
+    }
+  }, [hasPendingWithdrawal]);
 
   return (
     <div className="p-4 border rounded shadow-md max-w-md mx-auto mt-6">

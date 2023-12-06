@@ -25,7 +25,7 @@ function AccessControlWrapper({ children }: AccessControlWrapperProps) {
 
   if (!isAuthorized) {
     return (
-      <p>
+      <p className="rounded-md bg-red-900 text-white p-6 text-xl">
         Vous n'avez pas le droit d'accéder à cette application.
         <br />
         Veuillez vous connecter avec l'un des comptes autorisés.

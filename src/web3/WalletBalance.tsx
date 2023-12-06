@@ -4,11 +4,15 @@ function WalletBalance() {
   const { data: sharedBalance } = useSharedAccountGetSharedBalance();
 
   return (
-    <div>
-      Solde partagé:{" "}
-      {sharedBalance
-        ? `${Number(sharedBalance) / 1e18} Ethers`
-        : "Chargement..."}
+    <div className="">
+      <h1 className="capitalize outline p-2 rounded-md justify-center">
+        Solde du portefeuille partagé :{" "}
+        <strong className="text-xl">
+          {sharedBalance
+            ? `${Number(sharedBalance) / 1e18} Ethers`
+            : "Chargement..."}{" "}
+        </strong>
+      </h1>
     </div>
   );
 }
