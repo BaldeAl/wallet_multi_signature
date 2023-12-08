@@ -54,6 +54,10 @@ Chaque utilisateur peut approuver les transactions proposées par l'autre utilis
 ### Depot  : 
 Chaque utilisateur peut deposer de l'argent .
 
+## L'interface de l'application lorsqu'on est pas connecté
+![image](https://github.com/BaldeAl/wallet_multi_signature/assets/79581163/de70023a-4ca3-416f-8043-3704f3ed6752)
+
+
 ## L'interface de l'application lorsqu'on est connecté avec l'un des compte spécifier sur le contrat
 ![Alt text](image.png)
 ## S'il y a des demande de retrait à approuver
