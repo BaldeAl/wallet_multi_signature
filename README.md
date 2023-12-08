@@ -46,7 +46,7 @@ Une fois le contrat déployé, vous pouvez interagir avec le wallet multi-signat
 
 ## Fonctionnalités Front-End
 ### Authentification:
-Pour intéragir avec le wallet il faut forcement être connecté avec l'une des deux addresse spécifier dans le contrat
+Pour intéragir avec le wallet il faut forcement être connecté avec l'une des deux addresse spécifier dans le contrat au moment du déploiement 
 ### Soumission de Transactions : 
 Proposez des transactions à partir du wallet en donnant le nombre d'ethers que l'on veut retirer et aussi spécifier l'addresse de destination.
 ### Approbation de Transactions : 
