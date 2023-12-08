@@ -3,24 +3,18 @@ import {
   useSharedAccountUser2,
 } from "./wagmi.generated";
 
-type UsersAddressesProps = {
-  onSelectAddress: (address: string) => void;
-};
-
-function UsersAddresses({ onSelectAddress }: UsersAddressesProps) {
+function UsersAddresses() {
   const { data: user1 } = useSharedAccountUser1();
   const { data: user2 } = useSharedAccountUser2();
 
   return (
-    <div>
-      <select
-        onChange={(e) => onSelectAddress(e.target.value)}
-        className="mb-4 p-2 border rounded"
-      >
-        <option value="">Sélectionnez un utilisateur</option>
+    <div className="rounded-md bg-teal-50 text-black">
+      <div>
         {user1 && <option value={user1}>Utilisateur 1: {user1}</option>}
+      </div>
+      <div>
         {user2 && <option value={user2}>Utilisateur 2: {user2}</option>}
-      </select>
+      </div>
     </div>
   );
 }

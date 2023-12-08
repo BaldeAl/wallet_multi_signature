@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PendingWithdrawalComponent from "./GetPendingWithdrawl";
 import { Hex } from "viem";
 import { useAccount } from "wagmi";
@@ -36,7 +36,7 @@ function UserWithdrawals() {
       {otherUserAddress && (
         <PendingWithdrawalComponent
           userAddress={otherUserAddress}
-          isApprovable={isApprovable}
+          isApprovable={isApprovable ?? false}
         />
       )}
       {!otherUserAddress && isConnected && (

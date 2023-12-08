@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import React, { useState } from "react";
-import { useBalance } from "wagmi";
+import { useState } from "react";
+
 import { useSharedAccountDeposit } from "./wagmi.generated";
 
 function Deposit() {
-  const { data: balance } = useBalance();
   const { write } = useSharedAccountDeposit();
   const [depositAmount, setDepositAmount] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -21,12 +20,18 @@ function Deposit() {
       await write({ value: BigInt(amountInEther * 1e18) });
       setDepositAmount("");
       setErrorMessage("");
-    } catch (error: any) {
-      console.error("Erreur de dépôt : ", error);
-      if (error.message.includes("insufficient funds")) {
-        setErrorMessage("Fonds insuffisants pour effectuer la transaction");
+    } catch (error: unknown) {
+      if (error instanceof Error && typeof error.message === "string") {
+        console.error("Erreur de dépôt : ", error.message);
+
+        if (error.message.includes("insufficient funds")) {
+          setErrorMessage("Fonds insuffisants pour effectuer la transaction");
+        } else {
+          setErrorMessage("Erreur de dépôt");
+        }
       } else {
-        setErrorMessage("Erreur de dépôt");
+        console.error("Une erreur inconnue s'est produite");
+        setErrorMessage("Erreur de dépôt inconnue");
       }
     }
   };
