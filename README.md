@@ -53,6 +53,11 @@ Proposez des transactions à partir du wallet en donnant le nombre d'ethers que 
 Chaque utilisateur peut approuver les transactions proposées par l'autre utilisateur et pas les tiennes.
 ### Depot  : 
 Chaque utilisateur peut deposer de l'argent .
+### Demo du frontend ↓
+
+
+https://github.com/BaldeAl/wallet_multi_signature/assets/79581163/04e34ce8-5539-46a5-b0ed-da288a9699f2
+
 
 ## L'interface de l'application lorsqu'on est pas connecté
 ![image](https://github.com/BaldeAl/wallet_multi_signature/assets/79581163/de70023a-4ca3-416f-8043-3704f3ed6752)
