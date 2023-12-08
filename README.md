@@ -1,10 +1,40 @@
 # Wallet Multi-Signature
+Ce projet est une implémentation d'un wallet multi-signature. Un wallet multi-signature est un type de portefeuille numérique qui nécessite plusieurs approbations avant de pouvoir exécuter des transactions. 
+Ce projet permet de gérer un wallet multi-signature pour deux personne .
+
 
 ## Création d'un Nouveau Wallet Multi-Signature
 Pour créer un nouveau wallet multi-signature, vous devez déployer le smart contract . Ce processus est géré dans un dépôt Git séparé, spécifiquement conçu pour le développement et le déploiement de contrats Solidity avec Foundry.
 
 ## Référence du Dépôt de Contrat
-Vous trouverez le code du contrat et les instructions de déploiement dans le dépôt suivant : Lien du dépôt Solidity/Foundry.
+Vous trouverez le code du contrat et les instructions de déploiement dans le dépôt suivant : https://github.com/BaldeAl/sharedwallet.
+
+## Installation
+### Pour cloner le repos en local 
+``` 
+git clone https://github.com/BaldeAl/wallet_multi_signature.git
+```
+```
+cd wallet_multi_signature
+```
+### Télécharger les dépendences avec la commande suivante:
+```
+npm install
+```
+### Créer un fichier ".env" dans lequel vous mettrez les variables d'environnement suivantes:
+```
+ETHERSCAN_API_KEY = [Votre clé d'Api sur etherscan]
+```
+```
+SHARED_ACCOUNT_ADDRESS = [L'addresse de votre contrat solidity qui a été deployé]
+```
+```
+VITE_WALLET_ALCHEMY_API_KEY = [ Votre clé d'api alchemy ]
+```
+### Démarrer l'application avec la commande suivante :
+```
+npm run dev
+```
 
 ## Caractéristiques du Contrat
 ### Gestion de Deux Utilisateurs : 
